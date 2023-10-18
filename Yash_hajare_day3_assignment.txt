@@ -1,0 +1,91 @@
+Client code:
+
+package clientpro;
+import pack1.*;
+public class Clientaap {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       A a=new A();
+       a.setNum1(100);
+       System.out.println(a.getNum1());
+       B b=new B("hello");
+       System.out.println(b.getMessage());
+	}
+
+}
+
+
+Developer:
+
+class A
+
+
+/**
+ * 
+ */
+package pack1;
+
+/**
+ * @author Yash
+ */
+public class A {
+	
+	private int num1;
+
+	/**
+	 * @return the num1 which is set from setNum 
+	 */
+	public int getNum1() {
+		return num1;
+	}
+
+	/**
+	 * @param num1 to set num1 member variable
+	 */
+	public void setNum1(int num1) {
+		this.num1 = num1;
+	}
+	
+
+}
+
+
+
+Class B
+
+/**
+ * 
+ */
+package pack1;
+
+/**
+ * @author Hajare
+ */
+public class B {
+private String message;
+
+/**
+ * @param message to set message member variable
+ */
+public B(String message) {
+	super();
+	this.message = message;
+	
+}
+
+/**
+ * @return the message which has been passed
+ */
+public String getMessage() {
+	return message;
+}
+
+/**
+ * @param message the message to change
+ */
+public void setMessage(String message) {
+	this.message = message;
+}
+
+}

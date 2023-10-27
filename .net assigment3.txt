@@ -1,129 +1,99 @@
-1>
-amespace Assigment_Day3
-{
-    internal class Student
-    {
-        private String name;
-        private int maths;
-        private int science;
-        private int eng;
-        private int total1;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+/*Q1.create a class student with member variable name, maths, science, eng
+Create a method which will return total marks[300]
+Create a method which will display name and total.
+*/
 
-        //static constructor
-        static Student()
+namespace Ass5
+{
+    class student
+    {
+        private string name;
+        private int maths;
+        private int sci;
+        private int eng;
+        public student(string name, int maths, int sci,int eng)
         {
-            Console.WriteLine("vita mumbai");
-        }
-        public Student(String name ,int maths, int science, int eng):this(name)
-        {
-           
+            this.name = name;
             this.maths = maths;
-            this.science = science;
+            this.sci = sci;
             this.eng = eng;
-        }
-        public Student(String name)
-        {
-            int a = name.Length;
-            if (a < 4)
-            {
-                throw new Exception("provide the name inbetween 5-9 letters");
-            }
-            else
-            {
-                this.name = name;
-            }
         }
         public int total()
         {
-             total1=maths+science+eng;
-            return total1;
+            return maths+sci+eng;
         }
-        public void disp()
+        public void display()
         {
-            double to=total();
-            double pre = to / 300 * 100;
-            Console.WriteLine("name:{0} total:{1} pre:{2}", name,total1,pre);
+            int to = total();
+            Console.WriteLine("Name=" + name+"   "+ "total=" +to);
         }
-       
     }
-}
- 
-namespace Assigment_Day3
-{
-    internal class StudentDemo
+    internal class Program
     {
         static void Main(string[] args)
         {
-            
-            try
-            {
-                Student s = new Student("prashant", 100, 100, 100);
-                Student s1 = new Student("shustant", 100, 100, 100);
-                s.disp();
-                s1.disp();
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
-            
-
+            student s = new student("yash", 95, 99, 85);
+            s.display();
         }
     }
 }
 
-------------------------------------------------------------------------------------------------
-2>namespace Assigment1_Day3
-{
-    internal class Account
-    {
-        private String name;
-        private int id;
-        private int balance;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+/*Q2. create a class account having member name , id, balance
+Create a method -public void deposit(int amt){ balance=balance+amt}
+Create a method withdraw  -public void withdraw(int amt){ balance=balance-amt}
+Create display method which will display name and balance.
+Create 2 object and do transaction. 
 
-        //static constructor
-        static Account()
-        {
-            Console.WriteLine("state bank of India");
-        }
-        public Account(String name,int id)
+*/
+
+namespace Ass5
+{
+    class account
+    {
+        private string name;
+        private int id;
+        private int bal;
+        
+        public account(string name)
         {
             this.name = name;
-            this.id = id;
-
+            this.id = ++id;
+            
         }
-        public void deposite(int amt)
-        {
-            balance=balance+amt;
+        public void deposit(int amt) 
+        { 
+            bal = bal + amt; 
         }
         public void withdraw(int amt)
         {
-            balance=balance-amt;
+            if (bal > 0)
+            { 
+               bal = bal - amt;
+            }
         }
-        public void disp()
+        public void display()
         {
-            Console.WriteLine(this.balance);
+            Console.WriteLine($"NAME={name}  ID={id}  BALANCE={bal}");
         }
-
-        
     }
-}
-namespace Assigment1_Day3
-{
-    internal class AccountDemo
+    internal class Program
     {
         static void Main(string[] args)
         {
-            Account acc = new Account("vita", 0001);
-            acc.deposite(2000);
-            acc.withdraw(1000);
-            acc.disp();
-            Account acc1 = new Account("vita", 0002);
-            acc1.deposite(2000);
-            acc1.withdraw(500);
-            acc1.disp();
-
+            account s = new account("yash");
+            s.deposit(10000);
+            s.withdraw(2000);
+            s.display();
         }
     }
 }
@@ -183,10 +153,10 @@ namespace Assigment2_Day3
     {
         static void Main(string[] args)
         {
-            Class1 ref1 = new Class1(1,"prashant",5000,Dept.ADMIN);
+            Class1 ref1 = new Class1(1,"yash",5000,Dept.ADMIN);
             ref1.disp();
             Console.WriteLine(ref1);    
-            Class1 ref2 = new Class1(2, "sushant", 6000,Dept.MKT);
+            Class1 ref2 = new Class1(2, "jay", 6000,Dept.MKT);
             ref2.disp();
             Console.WriteLine(ref2);
 
@@ -265,15 +235,15 @@ namespace demo
             
             try
             {
-                Account acc = new Account("prshnat", "vyavhare", 5000);
+                Account acc = new Account("yash", "hajare", 5000);
                 acc.disp();
-                Console.WriteLine("interst for prashant:" + Account.payint(acc));
-                Account acc1 = new Account("ppppppp", "mangal", 4000);
+                Console.WriteLine("interst for yash:" + Account.payint(acc));
+                Account acc1 = new Account("jay", "hajare", 4000);
                 acc1.disp();
-                Console.WriteLine("interst for pooja:" + Account.payint(acc1));
-                Account acc2 = new Account("vinay", "shinde", 6000);
+                Console.WriteLine("interst for jay:" + Account.payint(acc1));
+                Account acc2 = new Account("shubham", "hajare", 6000);
                 acc2.disp();
-                Console.WriteLine("interst for vinay:" + Account.payint(acc2));
+                Console.WriteLine("interst for shubham:" + Account.payint(acc2));
             }
             catch(Exception e)
             {

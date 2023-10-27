@@ -1,0 +1,62 @@
+Q>{Create 2 string variable and accept data from user.
+Using equals and == check data entered by user is same or not.
+Print gethashcode for both string .variable
+Also use referenceEquals and observe out put.
+namespace StringDemo
+
+
+    internal class Class2
+    {
+        public static void Main()
+        {
+            Console.WriteLine("enter");
+            String a=Console.ReadLine();
+            String b=Console.ReadLine();
+            Console.WriteLine(a == b);
+            Console.WriteLine(a.Equals(b));
+            Console.WriteLine(a.GetHashCode());
+            Console.WriteLine(b.GetHashCode());
+            Console.WriteLine(a.ToString());
+            Console.WriteLine(b.ToString());
+            Console.WriteLine(Object.ReferenceEquals(a, b));
+            Console.WriteLine(Object.Equals(a, b));
+
+
+        }
+    }
+}
+----------------------------------------------------------------------
+Q>/*Write a method which will return sum of digit and using out variable let it send count of digit also.
+Eg. input 123  return(6) in out variable (3)*/
+
+namespace CallByRef
+{
+    internal class Class2
+    {
+        public int sum(int arr ,out int count)
+        {
+            int a;int sum = 0;count = 0;
+            while (arr != 0)
+            {
+                a = arr % 10;
+                sum= sum + a;
+                arr=arr / 10;
+                count ++;
+            }
+            
+            return sum;
+
+        }
+        public static void Main()
+        {
+            int count;
+            Console.WriteLine("enter the no:");
+            String s = Console.ReadLine();
+            int  a = int.Parse(s);
+            Class2 ref1 = new Class2();
+           Console.WriteLine(ref1.sum(a,out count));
+            Console.WriteLine(count);
+
+        }
+    }
+}

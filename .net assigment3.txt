@@ -1,0 +1,286 @@
+1>
+amespace Assigment_Day3
+{
+    internal class Student
+    {
+        private String name;
+        private int maths;
+        private int science;
+        private int eng;
+        private int total1;
+
+        //static constructor
+        static Student()
+        {
+            Console.WriteLine("vita mumbai");
+        }
+        public Student(String name ,int maths, int science, int eng):this(name)
+        {
+           
+            this.maths = maths;
+            this.science = science;
+            this.eng = eng;
+        }
+        public Student(String name)
+        {
+            int a = name.Length;
+            if (a < 4)
+            {
+                throw new Exception("provide the name inbetween 5-9 letters");
+            }
+            else
+            {
+                this.name = name;
+            }
+        }
+        public int total()
+        {
+             total1=maths+science+eng;
+            return total1;
+        }
+        public void disp()
+        {
+            double to=total();
+            double pre = to / 300 * 100;
+            Console.WriteLine("name:{0} total:{1} pre:{2}", name,total1,pre);
+        }
+       
+    }
+}
+ 
+namespace Assigment_Day3
+{
+    internal class StudentDemo
+    {
+        static void Main(string[] args)
+        {
+            
+            try
+            {
+                Student s = new Student("prashant", 100, 100, 100);
+                Student s1 = new Student("shustant", 100, 100, 100);
+                s.disp();
+                s1.disp();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            
+
+        }
+    }
+}
+
+------------------------------------------------------------------------------------------------
+2>namespace Assigment1_Day3
+{
+    internal class Account
+    {
+        private String name;
+        private int id;
+        private int balance;
+
+        //static constructor
+        static Account()
+        {
+            Console.WriteLine("state bank of India");
+        }
+        public Account(String name,int id)
+        {
+            this.name = name;
+            this.id = id;
+
+        }
+        public void deposite(int amt)
+        {
+            balance=balance+amt;
+        }
+        public void withdraw(int amt)
+        {
+            balance=balance-amt;
+        }
+        public void disp()
+        {
+            Console.WriteLine(this.balance);
+        }
+
+        
+    }
+}
+namespace Assigment1_Day3
+{
+    internal class AccountDemo
+    {
+        static void Main(string[] args)
+        {
+            Account acc = new Account("vita", 0001);
+            acc.deposite(2000);
+            acc.withdraw(1000);
+            acc.disp();
+            Account acc1 = new Account("vita", 0002);
+            acc1.deposite(2000);
+            acc1.withdraw(500);
+            acc1.disp();
+
+        }
+    }
+}
+------------------------------------------------------
+3>namespace Assigment2_Day3
+{
+     public enum Dept{
+
+        MKT,
+        ADMIN,
+        ADV,
+    }
+    internal class Class1
+    {
+        private int Id;
+        private string Name;
+        private float Salary;
+        private double netSalary;//private instance member
+        private Dept d;
+
+        //static constructor
+        static Class1()
+        {
+            Console.WriteLine("tcs");
+        }
+        //public constructor
+        public Class1(int id, string name, int salary , Dept d)
+        {
+            Id = id;
+            Name = name;
+            Salary = salary;
+            this.d = d;
+        }
+        //public method to work on instance method
+
+        public double paytex(double p)
+        {
+            netSalary = Salary - (Salary * p/100);
+            Console.WriteLine("netsalary:{0}", netSalary);
+            double tax = Salary - netSalary;
+           return tax;
+        }
+        
+        //public method to display
+
+        public void disp()
+        {
+            double b=paytex(10);
+            Console.WriteLine("Name:{0} tax:{1} dept{2} ", Name, b, d);
+        }
+    }
+}
+
+namespace Assigment2_Day3
+{
+    internal class EmployeeDemo
+    {
+        static void Main(string[] args)
+        {
+            Class1 ref1 = new Class1(1,"prashant",5000,Dept.ADMIN);
+            ref1.disp();
+            Console.WriteLine(ref1);    
+            Class1 ref2 = new Class1(2, "sushant", 6000,Dept.MKT);
+            ref2.disp();
+            Console.WriteLine(ref2);
+
+
+        }
+
+        
+    }
+
+-------------------------------------------------------------------
+4>
+namespace demo
+{
+    internal class Account
+    {
+        private int id;
+        private string firstname;
+        private string lastname;
+        private string middlename;
+        private double bal;
+        static int getid;
+        static double IntRate = 0.7;
+        static Account()
+        {
+            Console.WriteLine("bank of mp");
+        }
+        public Account(String firstname,String lastname,double bal):this(firstname)
+        {
+           
+            this.lastname = lastname;
+            this.bal = bal;
+            id = ++getid;
+        }
+        public Account(String firstname)
+        {
+            int a = firstname.Length;
+            if (a < 3)
+            {
+                throw new Exception("error");
+            }
+            else
+            {
+                this.firstname = firstname;
+            }
+
+        }
+       public void deposite(int amt)
+        {
+            bal = bal + amt;
+        }
+        public void withdraw(int amt)
+        {
+            bal = bal - amt;
+        }
+        public static double payint(Account obj)
+        {
+            double interset=obj.bal * IntRate;
+            
+            obj.bal = obj.bal + interset;
+            Console.WriteLine("bal after intersrt is adding:"+obj.bal);
+            return interset;
+        }
+        public void disp()
+        {
+            Console.WriteLine($"firstname:{firstname} lastname:{lastname} bal:{bal} id:{id}");
+        }
+    }
+}
+namespace demo
+{
+
+    internal class EmpDemo
+{
+    public static void Main()
+        {
+            
+            try
+            {
+                Account acc = new Account("prshnat", "vyavhare", 5000);
+                acc.disp();
+                Console.WriteLine("interst for prashant:" + Account.payint(acc));
+                Account acc1 = new Account("ppppppp", "mangal", 4000);
+                acc1.disp();
+                Console.WriteLine("interst for pooja:" + Account.payint(acc1));
+                Account acc2 = new Account("vinay", "shinde", 6000);
+                acc2.disp();
+                Console.WriteLine("interst for vinay:" + Account.payint(acc2));
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+        }
+}
+}
+------------------------------------------------------------------------------

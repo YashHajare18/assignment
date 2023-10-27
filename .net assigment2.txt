@@ -1,158 +1,117 @@
-Q1>Accept two number from user and do the sum of it
+/*Q1>Accept two number from user and do the sum of it
 Solve above code using Parse(), ToSingle() and TryPrase() method.
 Also observe exception if you do not enter valid data
+*/
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-using Parse()
-namespace StringTONumber
+
+namespace Ass5
 {
-    internal class Demo
+    internal class Program
     {
-        //Q1>Accept two number from user and do the sum of it
         static void Main(string[] args)
-        { 
-            Console.WriteLine("enter the no");
-            String a=Console.ReadLine();
-            String b=Console.ReadLine();
-            int x = int.Parse(a);
-           // Console.WriteLine(x);
-            int y=int.Parse(b);
-            //  Console.WriteLine(y);
-            int r1 = x + y;
-            Console.WriteLine($"result={r1}");//String interpolation
-            Console.WriteLine("res={0}", r1);//place holder
+        {
+            string s1 = Console.ReadLine();
+            string s2 = Console.ReadLine();
+            int a = int.Parse(s1);
+            int b = int.Parse(s2);
+            int sum=a+b;
+            Console.WriteLine(sum);
+            string s3 = Console.ReadLine();
+            string s4 = Console.ReadLine();
+            float c = Convert.ToSingle(s3);
+            float d = Convert.ToSingle(s4);
+            float sum1 = c + d;
+            Console.WriteLine(sum1);
+            string s5 = Console.ReadLine();
+            string s6 = Console.ReadLine();
+            float x, y;
+            bool e = float.TryParse(s5, out x);
+            bool f = float.TryParse(s4, out y);
+            float sum2 = x + y;
+            Console.WriteLine(sum2);
+
         }
     }
 }
 
-using Convert
-static void Main(string[] args)
-{
-    Console.WriteLine("enter the no");
-    String a = Console.ReadLine();
-    String b = Console.ReadLine();
-    int x=Convert.ToInt32(a);
-    int y=Convert.ToInt32(b);
-
-    Console.WriteLine("res{0}", x + y)
-
-};
-
-using TryParse
- static void Main(string[] args)
- {
-     Console.WriteLine("enter the no");
-     String s=Console.ReadLine();
-     String s2 = Console.ReadLine();
-     int a;int b;
-     bool c = int.TryParse(s, out a);
-     bool d=int.TryParse(s2, out b);
-     if(c==true&& d == true)
-     {
-         int e = a + b;
-         Console.WriteLine("res:{0}", e);
-     }
-     else
-     {
-         Console.WriteLine("enter the vaild data");
-     }
-
- }
-------------------------------------------------------------------------------
-Q2> Accept a float value and print square of that number
+/*Q2> Accept a float value and print square of that number
 Solve above code using Parse(), ToSingle() and TryPrase() method.
 Also observe exception if you do not enter valid data
-using Parse()
-namespace StringTONumber
+*/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ass5
 {
-    internal class Demo1
-    {//Q2. Accept a float value and print square of that number
-
-
+    internal class Program
+    {
         static void Main(string[] args)
         {
             Console.WriteLine("enter the float number");
-            String s = Console.ReadLine();
-            float a = float.Parse(s);
-            Console.WriteLine("sqr:"+a * a);
-
+            string s1 = Console.ReadLine();
+            float a = float.Parse(s1);
+            
+            float sqr=a*a;
+            Console.WriteLine(sqr);
+            string s3 = Console.ReadLine();
+            float c = Convert.ToSingle(s3);
+            float sqr1 = c*c;
+            Console.WriteLine(sqr1);
+            string s5 = Console.ReadLine();
+            float x;
+            bool e = float.TryParse(s5, out x);
+            float sqr2 = x*x;
+            Console.WriteLine(sqr2);
 
         }
     }
 }
 
-//using Convert
-static void Main(string[] args)
-{
-    Console.WriteLine("enter the float number");
-    String s=Console.ReadLine();
-    float f=Convert.ToSingle(s);
-    float ff = f * f;
-    Console.WriteLine($"sqr:{ff}");
-}
-
-//using TryParse
- static void Main(string[] args)
- {
-     Console.WriteLine("enter the float number");
-     String s = Console.ReadLine();
-     float x;
-     bool b=float.TryParse(s, out x);
-     Console.WriteLine(x*x+" "+b);
- }
-
-------------------------------------------------------
-Q3>Create a class calculator and write 3 instance method square, cube, round[if in put 22.5 o/p 22]
+/*Q3>Create a class calculator and write 3 instance method square, cube, round[if in put 22.5 o/p 22]
 Which will return square .cube and rounded number.
 Create object and call method and print the result.
+*/
 
-          public static void Main()
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ass5
+{
+    class calculater
+    {
+        public static int square(int x)
         {
-            
-            Calculator cal = new Calculator();
-            Console.WriteLine("enter the int num");
-            String s = Console.ReadLine();
-            float a;
-            bool b = float.TryParse(s, out a);
-          
-            if (b == true)
-            {
-                Console.WriteLine("sqr:"+cal.square(a));
-                Console.WriteLine("cube:"+cal.cube(a));
-                Console.WriteLine("round:" + cal.round(a));
-
-            }
-            else{
-                Console.WriteLine("enter the vaild data");
-            }
-
+            return x * x;
         }
-        public float square(float a)
+        public static int cube(int x)
         {
-            return a * a;
+            return x * x * x;
         }
-        public float cube(float a)
+        public static int round(double x)
         {
-            return a * a * a;
-
+            int y = (int)(x);
+            return y;
         }
-        public int round(float a)
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
         {
-
-            //return Convert.ToInt32(a);
-            int b = (int)a;
-            return b;
+            Console.WriteLine(calculater.square(10));
+            Console.WriteLine(calculater.cube(100));
+            Console.WriteLine(calculater.round(10.5));
         }
-        
+    }
 }
-}
-
-
-
-
-
-
-
-
-
-
-

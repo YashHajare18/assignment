@@ -81,22 +81,22 @@ namespace Properties
         {
             try
             {
-                Employee emp = new Employee("prashant", 4000);
+                Employee emp = new Employee("yash", 4000);
                 Console.WriteLine("id:" + emp.ID + " " + "name:" + emp.Name + " " + "salary:" + emp.Salary);
                 double tax = Employee.paytax(emp);
-                Console.WriteLine("prashant tax:" + tax);
-                Employee emp1 = new Employee("pooja", 5000);
+                Console.WriteLine("yash tax:" + tax);
+                Employee emp1 = new Employee("jay", 5000);
                 Console.WriteLine("id:" + emp1.ID + " " + "name:" + emp1.Name + " " + "salary:" + emp1.Salary);
                 double tax1 = Employee.paytax(emp1);
-                Console.WriteLine("pooja tax:" + tax1);
+                Console.WriteLine("jay tax:" + tax1);
                 Employee emp2 = new Employee("shubham", 6000);
                 Console.WriteLine("id:" + emp2.ID + " " + "name:" + emp2.Name + " " + "salary:" + emp2.Salary);
                 double tax2 = Employee.paytax(emp2);
                 Console.WriteLine("shubham tax:" + tax2);
-                Employee emp3 = new Employee("vinita", 7000);
+                Employee emp3 = new Employee("sanchita", 7000);
                 Console.WriteLine("id:" + emp3.ID + " " + "name:" + emp3.Name + " " + "salary:" + emp3.Salary);
                 double tax3 = Employee.paytax(emp3);
-                Console.WriteLine("vinita tax:" + tax3);
+                Console.WriteLine("sanchita tax:" + tax3);
             }
             catch (Exception e)
             {

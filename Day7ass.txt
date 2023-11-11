@@ -1,0 +1,241 @@
+//Create class Account having member id, name, balance.
+//Id autoincrement write read only property
+//Write getter setter for name and balance.
+//Balance can be modified only by child class.
+//This has virtual withdraw method which will 0.
+//It has deposit method.
+//Create two child class current and saving and override withdraw method. 
+//Create reference of Account class and point to saving account
+//and  current account. Using parent’s reference call withdraw method and deposit method.
+//Use ToString method to display status of the object [id name balance]
+using System;
+using System.Dynamic;
+using System.Runtime.InteropServices.WindowsRuntime;
+
+namespace Day7
+{
+    class Account
+    {
+        private static int id;
+        private string name;
+        private int balance;
+
+        public int Id
+        {
+            get
+            {
+                return ++id;
+            }
+        }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public int Balance
+        {
+            get { return balance; }
+            protected set { balance = value; }
+        }
+        virtual public int withdraw(int wd)
+        {
+            return 0;
+        }
+        public int deposit(int depo)
+        {
+            Balance = Balance + depo;
+            return Balance;
+        }
+
+    }
+    class Current : Account
+    {
+        public Current(string name, int balance)
+        {
+            this.Name = name;
+            this.Balance = balance;
+        }
+        public override int withdraw(int wd)
+        {
+            if (Balance >= wd)
+            {
+                Balance = Balance - wd;
+                return Balance;
+            }
+            else
+            {
+                throw new System.Exception("Insufficient Balance");
+            }
+
+        }
+        public override string ToString()
+        {
+            return "Name= " + Name + " id= " + Id + " Balance= " + Balance;
+        }
+    }
+    class Saving : Account
+    {
+        public Saving(string name, int balance)
+        {
+            this.Name = name;
+            this.Balance = balance;
+        }
+        public override int withdraw(int wd)
+        {
+            if (Balance >= wd)
+            {
+                Balance = Balance - wd;
+                return Balance;
+            }
+            else
+            {
+                throw new System.Exception("Insufficient Balance");
+            }
+
+        }
+        public override string ToString()
+        {
+            return "Name= " + Name + " id= " + Id + " Balance= " + Balance;
+        }
+    }
+    class Entry
+    {
+        static void Main(string[] args)
+        {
+            Account ac = new Current("Ashok", 60000);
+            ac.deposit(10000);
+            ac.withdraw(5000);
+            Console.WriteLine(ac.ToString());
+            Account account = new Saving("Amar", 50000);
+            Console.WriteLine(account.ToString());
+        }
+    }
+}
+
+
+//Create class Account having member id, name, balance.
+//Id autoincrement write read only property
+//Write getter setter for name and balance.
+//Balance can be modified only by child class.
+//This has virtual withdraw method which will 0.
+//It has deposit method.
+//Create two child class current and saving and override withdraw method. 
+//Create reference of Account class and point to saving account
+//and  current account. Using parent’s reference call withdraw method and deposit method.
+//Use ToString method to display status of the object [id name balance]
+using System;
+
+namespace yo
+{
+    class Account
+    {
+        private static int id;
+        private string name;
+        private double balance;
+        public int Id
+        {
+            get { return ++id; }
+        }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public double Balance
+        {
+            get { return balance; }
+            set { balance = value; }
+        }
+        public virtual double withdraw(int wd)
+        {
+            return 0;
+        }
+        public double deposit(int depo)
+        {
+            return Balance =Balance + depo;
+        }
+    }
+    class Saving : Account
+    {
+        public Saving(string name, int balance)
+        {
+            this.Name = name;
+            this.Balance = balance;
+        }
+        public override double withdraw(int wd)
+        {
+            if (Balance >= wd)
+            {
+                Balance = Balance - wd;
+                return Balance;
+            }
+            else
+            {
+                throw new System.Exception("Insufficient Balance");
+            }
+
+        }
+        public override string ToString()
+        {
+            return "Name= " + Name + " id= " + Id + " Balance= " + Balance;
+        }
+
+    }
+    class Current : Account
+    {
+        private double interest = 7.7;
+        public Current(string name, int balance)
+        {
+            this.Name = name;
+            this.Balance = balance;
+        }
+        public override double withdraw(int wd)
+        {
+            if (Balance >= wd)
+            {
+                Balance = Balance- wd*interest;
+                return Balance;
+            }
+            else
+            {
+                throw new System.Exception("Insufficient Balance");
+            }
+
+        }
+        public override string ToString()
+        {
+            return "Name= " + Name + " id= " + Id + " Balance= " + Balance;
+        }
+    }
+    class entr
+    {
+        static void Main(string[] args)
+        {
+            Account account = new Saving("Amar",50000);
+            account.withdraw(1000);
+            Console.WriteLine(account.ToString());
+            Account ac = new Current("Sneha", 50000);
+            ac.withdraw(1000);
+            Console.WriteLine(ac.ToString());
+        }
+    }
+
+}
+Create abstract class account having member id. name, balance
+Id is generated by application It is readonly property for ID.
+It has abstract method public abstract void withdraw(double amt);
+It has static method public static double payint(); which will return interest and increase balance if account holder has positive balance
+It has deposit method which will increase the balance.
+Write getter setter for name 
+Balance can be set only by child class.
+It has static double int_rate=0.07
+Create two child class Saving, Current
+Initialise data by calling parentclass constructor
+In saving account maintain minimum balance 1000 for this declare
+Const double minbal=1000
+In current account negative balance allowed.
+Let both child class override withdraw method.
+Create array of account class and store 2 object of saving account and current account.
+Do the transaction. When you load it should print name of bank
+
+

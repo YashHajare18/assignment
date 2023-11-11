@@ -1,0 +1,6 @@
+﻿CREATE PROCEDURE [dbo].[@Delete]
+@Id INT
+AS
+BEGIN
+DELETE FROM Employee WHERE Id=@Id; 
+END

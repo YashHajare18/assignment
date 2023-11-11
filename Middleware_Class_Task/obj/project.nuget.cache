@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Zss3GypYKRVAj+qWfaS9RnAY5qRg/VAE3CEE+mPfLeAJjqwInttvNXu673aK1ynlG0eoEOFNzLKZpVKam4+DHg==",
+  "success": true,
+  "projectFilePath": "C:\\myc#\\Middleware_Class_Task\\Middleware_Class_Task.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dell\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,14 @@
+C:\myc#\CA_ADO.Net\bin\Debug\net7.0\CA_ADO.Net.exe
+C:\myc#\CA_ADO.Net\bin\Debug\net7.0\CA_ADO.Net.deps.json
+C:\myc#\CA_ADO.Net\bin\Debug\net7.0\CA_ADO.Net.runtimeconfig.json
+C:\myc#\CA_ADO.Net\bin\Debug\net7.0\CA_ADO.Net.dll
+C:\myc#\CA_ADO.Net\bin\Debug\net7.0\CA_ADO.Net.pdb
+C:\myc#\CA_ADO.Net\obj\Debug\net7.0\CA_ADO.Net.GeneratedMSBuildEditorConfig.editorconfig
+C:\myc#\CA_ADO.Net\obj\Debug\net7.0\CA_ADO.Net.AssemblyInfoInputs.cache
+C:\myc#\CA_ADO.Net\obj\Debug\net7.0\CA_ADO.Net.AssemblyInfo.cs
+C:\myc#\CA_ADO.Net\obj\Debug\net7.0\CA_ADO.Net.csproj.CoreCompileInputs.cache
+C:\myc#\CA_ADO.Net\obj\Debug\net7.0\CA_ADO.Net.dll
+C:\myc#\CA_ADO.Net\obj\Debug\net7.0\refint\CA_ADO.Net.dll
+C:\myc#\CA_ADO.Net\obj\Debug\net7.0\CA_ADO.Net.pdb
+C:\myc#\CA_ADO.Net\obj\Debug\net7.0\CA_ADO.Net.genruntimeconfig.cache
+C:\myc#\CA_ADO.Net\obj\Debug\net7.0\ref\CA_ADO.Net.dll

@@ -1,0 +1,5 @@
+﻿CREATE PROCEDURE [dbo].[@Display]
+AS
+BEGIN
+SELECT * FROM Employee
+END
